@@ -30,5 +30,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void launchExit(View v){
+        finish();
+        System.exit(0);
+    }
+
 }
 

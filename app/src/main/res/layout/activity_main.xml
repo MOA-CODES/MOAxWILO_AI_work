@@ -50,12 +50,12 @@
 
         <Button
             android:id="@+id/btnhome"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="launchHome"
-            android:text="HOME"
-            style="?android:attr/buttonBarButtonStyle"/>
+            android:onClick="launchExit"
+            android:text="Exit" />
 
         <Button
             android:id="@+id/btnleaderboard"
