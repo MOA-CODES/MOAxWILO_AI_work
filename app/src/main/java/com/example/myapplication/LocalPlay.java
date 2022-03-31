@@ -24,5 +24,9 @@ public class LocalPlay extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void launchAIPVP(View v){
+        Intent i = new Intent(this, AIPVPSET.class);
+        startActivity(i);
+    }
 
 }
