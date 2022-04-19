@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PvAI extends AppCompatActivity {
 
@@ -53,7 +54,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -65,7 +66,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -77,7 +78,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -89,7 +90,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -101,7 +102,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -113,7 +114,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -125,7 +126,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -137,7 +138,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -149,7 +150,7 @@ public class PvAI extends AppCompatActivity {
                 buttonset(b1);
                 b1.setEnabled(false);
                 win();
-                setTurn();
+                setTurn();AI();
             }
         });
     }
@@ -157,6 +158,43 @@ public class PvAI extends AppCompatActivity {
         b.setText(turn);
     }
     public void win(){
+        //player
+        if((((Button)(findViewById(R.id.b1))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b2))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b3))).getText().toString()).equals(p1i)
+                ||(((Button)(findViewById(R.id.b4))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b5))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b6))).getText().toString()).equals(p1i)
+                ||(((Button)(findViewById(R.id.b7))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b8))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b9))).getText().toString()).equals(p1i)
+                ||(((Button)(findViewById(R.id.b1))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b4))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b7))).getText().toString()).equals(p1i)
+                ||(((Button)(findViewById(R.id.b2))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b5))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b8))).getText().toString()).equals(p1i)
+                ||(((Button)(findViewById(R.id.b3))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b6))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b9))).getText().toString()).equals(p1i)
+                ||(((Button)(findViewById(R.id.b1))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b5))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b9))).getText().toString()).equals(p1i)
+                ||(((Button)(findViewById(R.id.b3))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b5))).getText().toString()).equals(p1i)&&(((Button)(findViewById(R.id.b7))).getText().toString()).equals(p1i)){
+            Toast.makeText(this, "x wins", Toast.LENGTH_LONG).show();
+            p1w = p1w + 1; p2l = p2l +1; gamesplayed = gamesplayed +1;
+            TextView winner = findViewById(R.id.xwins); winner.setText(""+p1w);
+            TextView losser = findViewById(R.id.olosses); losser.setText(""+p2l);
+            TextView gp = findViewById(R.id.gamesplayedcount); gp.setText(""+gamesplayed);cleargrid();
+        }
+        //AI
+        if((((Button)(findViewById(R.id.b1))).getText().toString()).equals(p2i)&& (((Button)(findViewById(R.id.b2))).getText().toString()).equals(p2i)&& (((Button)(findViewById(R.id.b3))).getText().toString()).equals(p2i)
+                ||(((Button)(findViewById(R.id.b4))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b5))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b6))).getText().toString()).equals(p2i)
+                ||(((Button)(findViewById(R.id.b7))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b8))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b9))).getText().toString()).equals(p2i)
+                ||(((Button)(findViewById(R.id.b1))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b4))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b7))).getText().toString()).equals(p2i)
+                ||(((Button)(findViewById(R.id.b2))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b5))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b8))).getText().toString()).equals(p2i)
+                ||(((Button)(findViewById(R.id.b3))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b6))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b9))).getText().toString()).equals(p2i)
+                ||(((Button)(findViewById(R.id.b1))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b5))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b9))).getText().toString()).equals(p2i)
+                ||(((Button)(findViewById(R.id.b3))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b5))).getText().toString()).equals(p2i)&&(((Button)(findViewById(R.id.b7))).getText().toString()).equals(p2i)){
+            Toast.makeText(this, "AI wins", Toast.LENGTH_LONG).show();
+            p2w = p2w +1;p1l=p1l+1; gamesplayed = gamesplayed+1;
+            TextView winner = findViewById(R.id.owins); winner.setText(""+p2w);
+            TextView losser = findViewById(R.id.xlosses); losser.setText(""+p1l);
+            TextView gp = findViewById(R.id.gamesplayedcount); gp.setText(""+gamesplayed);cleargrid();
+        }
+        //DRAW
+        if((p1d == 5 && p2d ==4)||(p1d == 4 && p2d == 5)){
+            Toast.makeText(this, "draw", Toast.LENGTH_LONG).show(); gamesplayed = gamesplayed+1;
+            draw=draw+1;
+            TextView draw = findViewById(R.id.drawcount); draw.setText(""+draw);
+            TextView gp = findViewById(R.id.gamesplayedcount); gp.setText(""+gamesplayed);cleargrid();
+        }
 
     }
     public void AI(){
@@ -171,8 +209,67 @@ public class PvAI extends AppCompatActivity {
         a[7] = ((Button)(findViewById(R.id.b8))).getText().toString();
         a[8] = ((Button)(findViewById(R.id.b9))).getText().toString();
 
-        if(a[4].equals(p1i)){
-
+        Button b[] = new Button[9];
+        b[0] = (Button)findViewById(R.id.b1);
+        b[1] = (Button)findViewById(R.id.b2);
+        b[2] = (Button)findViewById(R.id.b3);
+        b[3] = (Button)findViewById(R.id.b4);
+        b[4] = (Button)findViewById(R.id.b5);
+        b[5] = (Button)findViewById(R.id.b6);
+        b[6] = (Button)findViewById(R.id.b7);
+        b[7] = (Button)findViewById(R.id.b8);
+        b[8] = (Button)findViewById(R.id.b9);
+        //middle play
+        if(a[4].equals(p1i) && p1d == 1){
+            int random = (int)(Math.random()*4);
+            int formiddleplay[] = {0,2,6,8};
+            int getb = formiddleplay[random];
+            b[getb].setText(p2i);
+            b[getb].setEnabled(false);
+            setTurn();
+        }
+        //defense middle
+        if(a[5-1].equals(p1i)&&p1d==2){
+            if(a[1-1].equals(p1i)){
+                b[9-1].setText(p2i);
+                b[9-1].setEnabled(false);
+                setTurn();
+            }
+            else if(a[2-1].equals(p1i)){
+                b[8-1].setText(p2i);
+                b[8-1].setEnabled(false);
+                setTurn();
+            }
+            else if(a[3-1].equals(p1i)){
+                b[7-1].setText(p2i);
+                b[7-1].setEnabled(false);
+                setTurn();
+            }
+            else if(a[4-1].equals(p1i)){
+                b[6-1].setText(p2i);
+                b[6-1].setEnabled(false);
+                setTurn();
+            }
+            else if(a[6-1].equals(p1i)){
+                b[4-1].setText(p2i);
+                b[4-1].setEnabled(false);
+                setTurn();
+            }
+            else if(a[7-1].equals(p1i)){
+                b[3-1].setText(p2i);
+                b[3-1].setEnabled(false);
+                setTurn();
+            }
+            else if(a[8-1].equals(p1i)){
+                b[2-1].setText(p2i);
+                b[2-1].setEnabled(false);
+                setTurn();
+            }
+            else if(a[9-1].equals(p1i)){
+                b[1-1].setText(p2i);
+                b[1-1].setEnabled(false);
+                setTurn();
+            }
         }
 
     }
